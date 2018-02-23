@@ -1,0 +1,101 @@
+html {
+  height: 100vh;
+  background-color: #ece0ff;
+  font-family: 'Montserrat', sans-serif;
+  background: url('wedding_cover.jpg') no-repeat 100% 10% fixed;
+  background-size: cover;
+}
+
+header {
+  padding: 24px;
+}
+
+h1 {
+  margin-bottom: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+a {
+  color: #e2e2e2;
+}
+
+li {
+  list-style: none;
+}
+
+section {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2%;
+  color: white;
+  font-weight: 600;
+  border: 2px solid white;
+}
+
+section > div {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.heart {
+  color: #a32525;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2%;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.info-content {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 90px;
+  padding: 24px;
+  background-color: rgba(206, 206, 206, 0.5);
+  border-radius: 2px;
+  box-shadow: 0px 0px 5px rgba(198, 198, 198, 0.8);
+}
+
+.content-group {
+  margin-bottom: 2%;
+  border: 2px solid white;
+}
+
+.content-group section {
+  border: none;
+}
+
+.route {
+  padding-top: 12px;
+}
+
+.footer-wrapper {
+  height: 90px;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  padding: 6px;
+  margin: 0 auto;
+}
