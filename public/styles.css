@@ -99,3 +99,7 @@ section > div {
   padding: 6px;
   margin: 0 auto;
 }
+
+.bold {
+  color: #bc2121;
+}
