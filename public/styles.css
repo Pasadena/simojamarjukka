@@ -103,3 +103,93 @@ section > div {
 .bold {
   color: #bc2121;
 }
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.riddle-box {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 600px;
+
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px grey;
+}
+
+.riddle-box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.riddle-box-content p {
+  text-align: center;
+}
+
+.riddle-box-footer {
+  padding: 12px;
+}
+
+.riddle-input {
+  width: 70%;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid lightblue;
+  align-self: center;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.riddle-input:focus {
+  outline: none;
+  animation: border-focus 1s ease-in forwards;
+}
+
+.riddle-button {
+  font-weight: 700;
+  font-size: 1.2em;
+  background-color: #166cf7;
+  color: white;
+  padding: 8px;
+}
+
+.riddle-button:hover {
+  cursor: pointer;
+  background-color: #0050d1;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+.alphabet-code {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+@keyframes border-focus {
+  0% {
+    border-bottom: 1px solid lightblue;
+  }
+  50% {
+    border-bottom: 1px solid blue;
+  }
+  100% {
+    border-bottom: 1px solid #0050d1;
+  }
+}

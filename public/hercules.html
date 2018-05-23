@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Simo <3 Maikka</title>
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="Content-Language" content="fi" />
+    <meta charset="utf-8"/>
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#363636">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
+    <body class="container">
+        <div class="riddle-box">
+            <div class="riddle-box-header">
+                <h3>Hello there!</h3>
+            </div>
+            <div class="riddle-box-content">
+                <p>
+                    Boys and girls, tieto on valtaa! Kumpaan hääparista kuvaus osuu? Vai ovatko molemmat veistetty samasta puusta?
+                    Olette ratkaisseet arvoituksen - tai niin te luulette. Vastauksenne muodostavat merkkijonon, 
+                    joka joko on oikein tai ei...
+                </p>
+                <p>
+                    Tarkastakaa vastauksenne, if you dare!
+                </p>
+                <input id="answer" placeholder="Oikea vastaus on..." class="riddle-input" />
+                <div id="correctAnswerInfo" class="invisible">
+                    <p>No sehän on oikein! Seuraava arvioitus löytyy paikast X.</p>
+                    <p>Ps...</p>
+                    <p class="alphabet-code">A=1, B=2m C=3, D=4, E=5, F=6, G=7, H=8, J=9<br/> 
+                        K=1, L=2, M=3, N=4, O=5, P=6, Q=7, R=8, S=9<br/>
+                        T=1, U=2, V=3, X=4, Y=5, Z=6, Å=7, Ä=8, Ö=9
+                    </p>
+                </div>
+                <div id="incorrectAnswerInfo" class="invisible"><p></p></div>
+            </div>
+            <div class="riddle-box-footer">
+                <button id="checkButton" class="riddle-button" onclick="onCheckButtonPressed(); return false;">Tarkasta</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function onCheckButtonPressed() {
+            console.log('Sitä munalla silmään joka sourcea tutkii...');
+            var solution = 'abaaacbc';
+            var answer = document.getElementById('answer');
+            var missedCount = checkAnswer(answer.value, solution);
+            if(missedCount == 0) {
+                toggleVisible(document.getElementById('correctAnswerInfo'), true);
+                toggleVisible(document.getElementById('incorrectAnswerInfo'), false);
+            } else {
+                var incorrectInfo = document.getElementById('incorrectAnswerInfo');
+                toggleVisible(document.getElementById('correctAnswerInfo'), false);
+                toggleVisible(incorrectInfo, true);
+                var amountOfCorrectGuesses = solution.length - missedCount;
+                incorrectInfo.firstChild.innerHTML = 'Sivuosuma! Saitte ' + amountOfCorrectGuesses + '/' + solution.length + ' oikein. Better luck next time!';
+            }
+        }
+        function checkAnswer(answer, solution) {
+            var index = 0;
+            var missedCount = 0;
+            for(var character of solution) {
+                if(character !== answer[index]) {
+                    ++missedCount;
+                }
+                ++index;
+            }
+            return missedCount;
+        }
+        function toggleVisible(element, visible) {
+            if(visible) {
+                element.classList.remove('invisible');
+            } else {
+                element.classList.add('invisible');
+            }
+        }
+    </script>
+</html>
