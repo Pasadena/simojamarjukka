@@ -18,30 +18,32 @@
     <body class="container">
         <div class="riddle-box">
             <div class="riddle-box-header">
-                <h3>Hello there!</h3>
+                <h3 class="no-margin">Hello there!</h3>
             </div>
             <div class="riddle-box-content">
-                <p>
-                    Boys and girls, tieto on valtaa! Kumpaan hääparista kuvaus osuu? Vai ovatko molemmat veistetty samasta puusta?
-                    Olette ratkaisseet arvoituksen - tai niin te luulette. Vastauksenne muodostavat merkkijonon, 
-                    joka joko on oikein tai ei...
-                </p>
-                <p>
-                    Tarkastakaa vastauksenne, if you dare!
-                </p>
+                <div class="riddle-info">
+                    <p>
+                        Boys and girls, tieto on valtaa! Kumpaan hääparista kuvaus osuu? Vai ovatko molemmat veistetty samasta puusta?
+                        Olette ratkaisseet arvoituksen - tai niin te luulette. Vastauksenne muodostavat merkkijonon, 
+                        joka joko on oikein tai ei...
+                    </p>
+                    <p>
+                        Tarkastakaa vastauksenne, if you dare!
+                    </p>
+                </div>
                 <input id="answer" placeholder="Oikea vastaus on..." class="riddle-input" />
+                <button id="checkButton" class="riddle-button" onclick="onCheckButtonPressed(); return false;">Tarkasta</button>
+            </div>
+            <div class="riddle-box-footer">
                 <div id="correctAnswerInfo" class="invisible">
-                    <p>No sehän on oikein! Seuraava arvioitus löytyy paikast X.</p>
+                    <p>Oikein! Seuraava arvioitus löytyy paikast X.</p>
                     <p>Ps...</p>
-                    <p class="alphabet-code">A=1, B=2m C=3, D=4, E=5, F=6, G=7, H=8, J=9<br/> 
-                        K=1, L=2, M=3, N=4, O=5, P=6, Q=7, R=8, S=9<br/>
-                        T=1, U=2, V=3, X=4, Y=5, Z=6, Å=7, Ä=8, Ö=9
+                    <p class="alphabet-code">A=9, B=2, C=2, D=5, E=3, F=8, G=0, H=6, I=7, J=4, 
+                        K=1, L=4, M=5, N=8, O=3, P=1, Q=9, R=7, S=0, 
+                        T=2, U=1, V=0, X=4, Y=8, Z=9, Å=3, Ä=2, Ö=5
                     </p>
                 </div>
                 <div id="incorrectAnswerInfo" class="invisible"><p></p></div>
-            </div>
-            <div class="riddle-box-footer">
-                <button id="checkButton" class="riddle-button" onclick="onCheckButtonPressed(); return false;">Tarkasta</button>
             </div>
         </div>
     </body>
@@ -66,7 +68,8 @@
             var index = 0;
             var missedCount = 0;
             for(var character of solution) {
-                if(character !== answer[index]) {
+                var singleAnswer = answer[index];
+                if(!singleAnswer || character !== singleAnswer.toLowerCase()) {
                     ++missedCount;
                 }
                 ++index;
